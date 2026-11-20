@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAP Project Map · Bildsten Architecture & Planning</title>
+  <meta name="description" content="Explore selected projects by Bildsten Architecture & Planning across Santa Barbara, Montecito, Goleta and Carpinteria." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--color-primary)" opacity="0.12"/>
+        <path d="M6 24 L12 10 L16 18 L20 12 L26 24 Z" stroke="var(--color-primary)" stroke-width="2" stroke-linejoin="round" fill="none"/>
+        <circle cx="22" cy="10" r="3" fill="var(--color-accent)" opacity="0.8"/>
+        <rect x="6" y="22" width="20" height="2" rx="1" fill="var(--color-primary)" opacity="0.5"/>
+      </svg>
+      <div class="header-title-group">
+        <span class="header-title">BAP Project Map</span>
+        <span class="header-sub">Bildsten Architecture &amp; Planning · Selected work by area</span>
+      </div>
+    </div>
+    <a class="header-link" href="https://www.santabarbaraarchitects.com" target="_blank" rel="noopener">santabarbaraarchitects.com ↗</a>
+  </header>
+
+  <main class="layout">
+    <div id="map" aria-label="Map of project areas"></div>
+
+    <div class="basemap-switch" role="group" aria-label="Basemap">
+      <button data-basemap="light" class="active">Light</button>
+      <button data-basemap="topo">Topo</button>
+      <button data-basemap="osm">Streets</button>
+      <button data-basemap="satellite">Satellite</button>
+    </div>
+
+    <div id="extra-chips" class="extra-chips"></div>
+
+    <aside id="panel" class="panel" aria-live="polite">
+      <div class="panel-grip" aria-hidden="true"></div>
+      <div id="panel-body" class="panel-body"></div>
+    </aside>
+  </main>
+
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" aria-label="Previous photo">‹</button>
+    <img id="lb-img" alt="" />
+    <button class="lb-nav lb-next" aria-label="Next photo">›</button>
+    <div id="lb-count" class="lb-count"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
