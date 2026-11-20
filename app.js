@@ -37,7 +37,7 @@
   const panelPad = () => (window.innerWidth > 720 ? [40, 40 + 392, 40, 40] : [30, 30, Math.round(window.innerHeight * 0.55), 30]);
   const fit = b => map.fitBounds(b, { paddingTopLeft: [panelPad()[3], panelPad()[0]], paddingBottomRight: [panelPad()[1], panelPad()[2]] });
 
-  Promise.all([fetch('data/regions.geojson').then(r => r.json()), fetch('data/projects.json').then(r => r.json())])
+  Promise.all([fetch('regions.geojson').then(r => r.json()), fetch('projects.json').then(r => r.json())])
     .then(([gj, projects]) => {
       state.projects = projects.filter(p => p.region || REVIEW).map(p => ({ ...p, region: p.region || 'unplaced' }));
       const group = L.featureGroup().addTo(map);
